@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f6f5f1" />
+    <meta name="description" content="仅保存在本机浏览器中的个人工作与生活管理工具。" />
+    <title>我的日常</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="主导航">
+        <a class="brand" href="#/home" aria-label="我的日常首页">
+          <span class="brand-mark">日</span>
+          <span><strong>我的日常</strong><small>个人工作与生活</small></span>
+        </a>
+        <nav id="primary-nav" class="primary-nav"></nav>
+        <div class="sidebar-foot"><span class="local-dot"></span>数据保存在这台电脑</div>
+      </aside>
+      <main class="main-area">
+        <header class="topbar">
+          <div class="breadcrumb"><span>我的日常</span><span class="crumb-separator">/</span><strong id="page-title">首页总览</strong></div>
+          <div class="topbar-tools">
+            <label class="global-search"><span aria-hidden="true">⌕</span><input id="global-search" type="search" placeholder="搜索备忘…" aria-label="搜索备忘" /><kbd>Ctrl K</kbd></label>
+            <button class="button button-primary button-small" data-action="add" data-collection="memos">＋ 记备忘</button>
+          </div>
+        </header>
+        <section id="page-content" class="page-content" tabindex="-1"></section>
+      </main>
+    </div>
+    <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+    <dialog id="record-dialog" class="record-dialog" aria-labelledby="dialog-title"><form id="record-form" method="dialog"></form></dialog>
+    <dialog id="confirm-dialog" class="record-dialog confirm-dialog" aria-labelledby="confirm-title"></dialog>
+    <script type="module" src="./src/app.mjs"></script>
+  </body>
+</html>
